@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Philip White -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- page layout -->
+</head>
+
+<!--button HTML -->
+
+<div><img id="myImage" src="car.gif" /></div>
+<input type="button" value="Start" onclick="startStop()" id="startButton">
+<input type="button" value="Stop" onclick="stop()">
+
+
+
+<!-- something Exciting -->
+
+<body>
+
+    <!-- image -->
+        <img id="DJI_Mavic_03-1" src="C:\Users\phil\OneDrive\csc102">
+
+        
+<div><img id="myImage" src="car.gif" /></div>
+<input type="button" value="Start" onclick="startStop()" id="startButton">
+<input type="button" value="Stop" onclick="stop()">
+
+
+ </p>
+ 
+ 
+     </p>
+</body>
+</html>
+
+function init(){
+    imgObj = document.getElementById('myImage');
+    imgObj.style.position= 'relative';
+    imgObj.style.left = '0px';
+    }
+    
+    function startStop(){
+    moveRight();
+    change();
+    }
+    
+    function moveRight(){
+    imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+    animate = setTimeout(moveRight,50); 
+    }
+    
+    function change(){
+    var elem = document.getElementById("startButton");
+    if (elem.value=="Stop") elem.value = "Start";
+    else elem.value = "Stop";
+    }
+    
+    function stop(){
+    clearTimeout(animate);
+    }
+    
+    window.onload =init;
