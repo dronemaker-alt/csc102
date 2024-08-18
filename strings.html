@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- philip  white -->
+<!-- cs102 assignment for strings -->
+
+
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Input Example</title>
+<script>
+    // code for input
+    // user input boxes
+function ReturnUserInfo(){
+var fullname = document.getElementById("fname").value + document.getElementById("lname").value;
+var lengthofname = fullname.length;
+if (lengthofname > 10){
+document.getElementById("nameofperson").innerHTML = "The length of your name is: " + lengthofname;
+}
+else{
+document.getElementById("nameofperson").innerHTML = "Your name is less than 10 characters";
+}
+
+//alert(fullname);
+}
+</script>
+</head>
+<body>
+
+<label for="fname">First Name</label>
+<input type="text" id="fname" placeholder="Enter first name here" /><br /><br />
+<label for="lname">Last Name</label>&nbsp;
+<input type="text" id="lname" placeholder="Enter last name here" /><br /><br />
+
+<p id="nameofperson"></p><br /><br />
+
+<button id="returnName" onclick="ReturnUserInfo()">Click here to return your name</button>
+
+
+
+</body>
+</html>
