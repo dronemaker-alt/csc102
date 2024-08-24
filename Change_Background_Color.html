@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            font-size: 20px;
+            width:300px;
+            height:100px;
+            color: white;
+
+        }
+
+    </style>
+    <script type="text/javascript">
+       function change_to_red()
+        {
+            document.getElementById("b").style.backgroundColor = "red";
+        }
+        
+    </script>
+    <script type="text/javascript">
+      function  change_to_blue()
+             {
+                 document.getElementById("b").style.backgroundColor = "blue";
+             }
+             
+         </script>
+             <script type="text/javascript">
+                function myfunctionColor()
+                 {
+                     document.getElementById("b").style.backgroundColor = "tan";
+                 }
+                 
+             </script>
+</head>
+<body id="b" onload="myfunctionColor()">
+<button id="change_color_blue" onclick="change_to_blue()"  style="background-color: blue;">Change background to blue</button>
+<button id="change_color_red" onclick="change_to_red()" style="background-color: red;">Change background to red</button>
+<button id="change_back_to_tan" onclick="myfunctionColor()" style="background-color: tan;">Change background back to tan</button>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+   <!--<link rel="stylesheet" href="styles.css">-->
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f6ebeb;
+        color: #201f1f;
+    }
+    
+    .container {
+        margin-top: 50px;
+    }
+    
+    .dice {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 3em;
+        line-height: 100px;
+        text-align: center;
+    }
+    
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    
+    #result {
+        margin-top: 20px;
+        font-size: 1.5em;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Dice Game</h1>
+        <div class="dice" id="dice1"></div>
+        <div class="dice" id="dice2"></div>
+        <button onclick="rollDice()">Roll Dice</button><br />
+        <p id="result"></p>
+    </div>
+    <script>
+        // Function to generate a random number between 1 and 6
+        function getRandomDiceValue() {
+            return Math.floor(Math.random() * 6) + 1;
+        }
+        
+        // Function to update the dice display
+        function updateDiceDisplay(diceId, value) {
+            const diceElement = document.getElementById(diceId);
+            diceElement.textContent = value;
+        }
+        
+        // Function to display the result
+        function displayResult(message) {
+        const resultElement = document.getElementById("result");
+        resultElement.textContent = message;
+        }
+        
+        // Function to roll the dice and determine the game result
+        function rollDice() {
+        const dice1 = getRandomDiceValue();
+        const dice2 = getRandomDiceValue();
+        
+        //Call functions dice1 and dice 2 
+            updateDiceDisplay("dice1", dice1);
+            updateDiceDisplay("dice2", dice2);
+        //Compare the dice if they match then user wins 
+            if (dice1 === dice2) {
+                displayResult("You win!");
+            } else {
+                displayResult("You lose!");
+            }
+        }
+        
+        // Adding event listener to the button
+        document.querySelector("button").addEventListener("click", rollDice);
+            </script>
+</body>
+</html>

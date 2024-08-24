@@ -1,0 +1,87 @@
+<!--John Hamilton example for CSC 102 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loop Examples</title>
+<!--using css to change buttons, body, and an id called result -->
+    <style>
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSC 102 JavaScript Loop Examples</h1>
+
+    <!--Three buttons that will call JavaScript functions -->
+    <button onclick="whileLoop()">While Loop</button>
+    <button onclick="doWhileLoop()">Do While Loop</button>
+    <button onclick="forLoop()">For Loop</button>
+    
+    <div id="result"></div>
+    <!--Javascript function in the HTML File -->
+    <script>
+	
+ 
+function ifCondition(){
+	 let i = 0;
+	for (let i = 0; i < 10; i++) {
+       result += `Number: ${i}<br>`;
+		   if(i == 6){
+            document.getElementById('result').innerHTML = "Completed  " + i.toString();
+           }           
+      }
+}
+   
+        function whileLoop() {
+           //variable called result and i 
+            let result = '';
+            let i = 0;
+            //while decision if i is less than 10 print 'Number the value of i - Note since i is set to 0 the first i result will be zero'
+            while (i < 10) {
+                result += `Number: ${i}<br>`;
+                i++;//adds 1 to i 
+            }
+            //print the results of all i values 
+            document.getElementById('result').innerHTML = result;
+        }
+
+        function doWhileLoop() {
+             //while decision if i is less than 10 print 'Number the value of i - Note since i is set to 0 the first i result will be zero'
+            let result = '';
+            let i = 0;
+            //do something that is, assign the result to Number: i until or while i is less then 20  
+            do {
+                result += `Number: ${i}<br>`;
+                i++;
+            } while (i < 20);
+            document.getElementById('result').innerHTML = result;
+        }
+
+        function forLoop() {
+            let result = '';
+            //simple for loop 
+            //three parts, set i = 0, i < 30; increase i by one for(initiate variable; condition; add, divide, multiply or subtract using this notation i++, i--)
+            for (let i = 0; i < 30; i++) {
+                result += `Number: ${i}<br>`;
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
